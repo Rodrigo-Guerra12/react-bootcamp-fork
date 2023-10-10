@@ -1,22 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import TaskList from "./Components/TaskList";
+import "./App.css";
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const url = "http://localhost:3000/tasks";
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url);
+      const jsonData = await response.json();
+      setTasks(jsonData);
+    } catch (error) {
+      console.log("Error al traer datos desde Mocki:", error);
+    }
+  };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
-      <div>React</div>
-     
+      <div>
+        <TaskList tasks={tasks} />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
 
-// ejemplo de estructura 
+// ejemplo de estructura
 
 // import React from 'react';
 // import { TaskProvider } from './context/TaskContext.jsx';
@@ -35,4 +49,3 @@ export default App
 // };
 
 // export default App;
-

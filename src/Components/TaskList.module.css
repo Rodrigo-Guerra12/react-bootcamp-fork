@@ -1,0 +1,10 @@
+.flexDiv {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: red;
+}
+
+.flexTask {
+  margin: 10px;
+}
