@@ -1,6 +1,7 @@
+import './App.css'
 import { useState, useEffect } from "react";
 import TaskList from "./Components/TaskList";
-import "./App.css";
+
 
 function App() {
   const [tasks, setTasks] = useState([]);
