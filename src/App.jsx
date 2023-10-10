@@ -1,25 +1,37 @@
 import './App.css'
-import { Task } from './Components/Task/Task'
+import { useState, useEffect } from "react";
+import TaskList from "./Components/TaskList";
+
 
 function App() {
+  const [tasks, setTasks] = useState([]);
+  const url = "http://localhost:3000/tasks";
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url);
+      const jsonData = await response.json();
+      setTasks(jsonData);
+    } catch (error) {
+      console.log("Error al traer datos desde Mocki:", error);
+    }
+  };
 
-const task = {
-  id: 0,
-  description: "Descargar el proyecto",
-  isCompleted: true
-}
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <>
-      <Task task = {task}/>
-     
+      <div>
+        <TaskList tasks={tasks} />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
 
-// ejemplo de estructura 
+// ejemplo de estructura
 
 // import React from 'react';
 // import { TaskProvider } from './context/TaskContext.jsx';
@@ -38,4 +50,3 @@ export default App
 // };
 
 // export default App;
-
