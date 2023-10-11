@@ -1,7 +1,6 @@
-import './App.css'
+import "./App.css";
 import { useState, useEffect } from "react";
 import TaskList from "./Components/TaskList";
-
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -22,8 +21,8 @@ function App() {
 
   return (
     <>
-      <div>
-        <TaskList tasks={tasks} />
+      <div className="Container">
+        <div>{tasks.length > 0 && <TaskList tasks={tasks} />}</div>
       </div>
     </>
   );

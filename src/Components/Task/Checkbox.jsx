@@ -1,10 +1,9 @@
-import React from 'react';
-import { useState } from 'react';
-import Checkbox from '@mui/material/Checkbox';
+import { useState } from "react";
+import Checkbox from "@mui/material/Checkbox";
+import { PropTypes } from "prop-types";
 
-
-export default function ControlledCheckbox() {
-  const [checked, setChecked] = React.useState(false);
+export const ControlledCheckbox = ({ isCompleted }) => {
+  const [checked, setChecked] = useState(isCompleted);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);
@@ -14,7 +13,9 @@ export default function ControlledCheckbox() {
     <Checkbox
       checked={checked}
       onChange={handleChange}
-      inputProps={{ 'aria-label': 'controlled' }}
+      inputProps={{ "aria-label": "controlled" }}
     />
   );
-}
+};
+
+ControlledCheckbox.propTypes = { isCompleted: PropTypes.boolean };
