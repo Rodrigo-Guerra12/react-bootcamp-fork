@@ -1,4 +1,4 @@
-import classes from "./app.module.css";
+// import classes from "./app.module.css";
 import { useState, useEffect } from "react";
 import TaskList from "./Components/TaskList";
 import { Filter } from "./Components/Filter/Filter";
@@ -23,9 +23,7 @@ function App() {
   return (
     <>
       <Filter />
-      <div className={classes.App}>
-        {tasks.length > 0 && <TaskList tasks={tasks} />}
-      </div>
+      <div>{tasks.length > 0 && <TaskList tasks={tasks} />}</div>
     </>
   );
 }

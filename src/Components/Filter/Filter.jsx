@@ -9,7 +9,7 @@ export const Filter = () => {
   };
 
   return (
-    <FormControl>
+    <FormControl sx={{ width: 400 }}>
       <InputLabel id="demo-simple-select-label">Task State</InputLabel>
 
       <Select
