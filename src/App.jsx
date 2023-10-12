@@ -1,6 +1,7 @@
-import "./App.css";
+import classes from "./app.module.css";
 import { useState, useEffect } from "react";
 import TaskList from "./Components/TaskList";
+import { Filter } from "./Components/Filter/Filter";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -21,8 +22,9 @@ function App() {
 
   return (
     <>
-      <div className="Container">
-        <div>{tasks.length > 0 && <TaskList tasks={tasks} />}</div>
+      <Filter />
+      <div className={classes.App}>
+        {tasks.length > 0 && <TaskList tasks={tasks} />}
       </div>
     </>
   );

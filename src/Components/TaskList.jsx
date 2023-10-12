@@ -8,7 +8,7 @@ const TaskList = ({ tasks }) => {
   return (
     <>
       {" "}
-      <Container maxWidth="md">
+      <Container maxWidth="100%">
         <div className={classes.TaskList}>
           <ul>
             {tasks.map((taskItem) => {

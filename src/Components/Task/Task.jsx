@@ -9,7 +9,7 @@ import { ControlledCheckbox } from "./Checkbox";
 
 export const Task = ({ task }) => {
   return (
-    <Card sx={{ maxWidth: 360 }}>
+    <Card sx={{ maxWidth: 250 }}>
       <CardContent>
         <h1>{task.description}</h1>
         <h2>

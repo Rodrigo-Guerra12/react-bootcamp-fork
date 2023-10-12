@@ -1,0 +1,23 @@
+li {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 2fr 1fr;
+  list-style: none;
+  border: solid red 2px;
+  margin: 10px;
+}
+
+ul {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  margin: 5px;
+  justify-content: space-between;
+  width: auto;
+}
+
+/* div {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+} */
