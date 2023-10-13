@@ -3,9 +3,10 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select"; //  { SelectChangeEvent }
 
-export const Filter = () => {
-  const handleChange = () => {
-    console.log(handleChange);
+export const Filter = ({ filterHandler }) => {
+  const handleChange = (e) => {
+    console.log("handleChange", e);
+    filterHandler(e);
   };
 
   return (
@@ -17,13 +18,13 @@ export const Filter = () => {
         id="demo-simple-select"
         value={null}
         label="Age"
-        onChange={handleChange}
+        onChange={(e) => handleChange(e.target.value)}
       >
-        <MenuItem value={true}>complete</MenuItem>
+        <MenuItem value={1}>complete</MenuItem>
 
-        <MenuItem value={false}>no complited</MenuItem>
+        <MenuItem value={0}>no complited</MenuItem>
 
-        <MenuItem value={null}>all</MenuItem>
+        <MenuItem value={2}>all</MenuItem>
       </Select>
     </FormControl>
   );
