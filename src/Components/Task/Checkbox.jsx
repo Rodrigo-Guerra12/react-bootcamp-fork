@@ -4,6 +4,7 @@ import { PropTypes } from "prop-types";
 
 export const ControlledCheckbox = ({ isCompleted }) => {
   const [checked, setChecked] = useState(isCompleted);
+  console.log(checked, isCompleted);
 
   const handleChange = (event) => {
     setChecked(event.target.checked);

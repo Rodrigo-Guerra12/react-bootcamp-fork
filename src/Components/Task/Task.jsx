@@ -8,6 +8,7 @@ import ContainedButtons from "./Button";
 import { ControlledCheckbox } from "./Checkbox";
 
 export const Task = ({ task }) => {
+  console.log(task.description, "", task.isCompleted);
   return (
     <Card sx={{ maxWidth: 250 }}>
       <CardContent>
