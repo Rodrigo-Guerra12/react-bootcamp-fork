@@ -2,7 +2,12 @@ import classes from "./app.module.css";
 import { useState, useEffect } from "react";
 import TaskList from "./Components/TaskList";
 import { Filter } from "./Components/Filter/Filter";
-import CardForm from "./Components/AddTaskForm/CardForm";
+
+import CardForm from './Components/AddTaskForm/CardForm'
+
+
+import { TaskForm } from "./Components/AddTaskForm/TaskForm";
+
 
 function App() {
   const [filteredTaskList, setFilteredTaskList] = useState([]);
@@ -43,9 +48,13 @@ function App() {
     <>
       <Filter filterHandler={filterTasks} />
       <div className={classes.App}>
-        {tasks.length > 0 && <TaskList tasks={filteredTaskList} />}
+
+      {tasks.length > 0 && <TaskList tasks={filteredTaskList} />}
       </div>
-      <CardForm />
+      <CardForm>
+        <TaskForm/>   
+      </CardForm >
+
     </>
   );
 }
