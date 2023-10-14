@@ -9,8 +9,9 @@ export const Filter = () => {
   };
 
   return (
-    <FormControl>
-      <InputLabel id="demo-simple-select-label">Task State</InputLabel>
+
+    <FormControl sx={{minWidth: 300}}>
+      <InputLabel id="demo-simple-select-label">Estado de la Tarea</InputLabel>
 
       <Select
         labelId="demo-simple-select-label"
@@ -19,11 +20,19 @@ export const Filter = () => {
         label="Age"
         onChange={handleChange}
       >
+<<<<<<< Updated upstream
         <MenuItem value={true}>complete</MenuItem>
 
         <MenuItem value={false}>no complited</MenuItem>
 
         <MenuItem value={null}>all</MenuItem>
+=======
+        <MenuItem value={1}>Completada</MenuItem>
+
+        <MenuItem value={0}>No Completada</MenuItem>
+
+        <MenuItem value={2}>Todas</MenuItem>
+>>>>>>> Stashed changes
       </Select>
     </FormControl>
   );

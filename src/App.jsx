@@ -2,8 +2,12 @@ import classes from "./app.module.css";
 import { useState, useEffect } from "react";
 import TaskList from "./Components/TaskList";
 import { Filter } from "./Components/Filter/Filter";
+<<<<<<< Updated upstream
 import CardForm from './Components/AddTaskForm/CardForm'
 
+=======
+import { TaskForm } from "./Components/AddTaskForm/TaskForm";
+>>>>>>> Stashed changes
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -26,9 +30,16 @@ function App() {
     <>
       <Filter />
       <div className={classes.App}>
+<<<<<<< Updated upstream
         {tasks.length > 0 && <TaskList tasks={tasks} />}
       </div>
       <CardForm/>
+=======
+        {tasks.length > 0 && <TaskList tasks={filteredTaskList} />}
+        <TaskForm/>
+      </div>
+     
+>>>>>>> Stashed changes
     </>
   );
 }
